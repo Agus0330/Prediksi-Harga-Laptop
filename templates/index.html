@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediksi Harga Laptop</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Prediksi Harga Laptop Gaming di Indonesia</h1>
+        <p>Aplikasi ini digunakan untuk memprediksi harga laptop berdasarkan spesifikasi yang Anda masukkan.</p>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2>Masukkan Spesifikasi Laptop</h2>
+            <form id="prediction-form">
+                <label for="name">Nama Laptop:</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan nama laptop" required><br>
+
+                <label for="processor">Processor:</label>
+                <select id="processor" name="processor" required>
+                    <option value="" disabled selected>Pilih Processor...</option>
+                    <option value="Intel Core i9">Intel Core i9</option>
+                    <option value="Intel Core i7">Intel Core i7</option>
+                    <option value="Intel Core i5">Intel Core i5</option>
+                    <option value="Intel Core i3">Intel Core i3</option>
+                    <option value="AMD Ryzen 9">AMD Ryzen 9</option>
+                    <option value="AMD Ryzen 5">AMD Ryzen 5</option>
+                    <option value="AMD Ryzen 7">AMD Ryzen 7</option>
+                </select><br>
+
+                <label for="screen_size">Ukuran Layar (inch):</label>
+                <select id="screen_size" name="screen_size" required>
+                    <option value="" disabled selected>Pilih Ukuran Layar...</option>
+                    <option value="18.0">18.0</option>
+                    <option value="17.0">17.0</option>
+                    <option value="16.0">16.0</option>
+                    <option value="15.0">15.0</option>
+                    <option value="14.0">14.0</option>
+                    <option value="13.0">13.0</option>
+                </select><br>
+
+                <label for="color">Warna:</label>
+                <select id="color" name="color" required>
+                    <option value="" disabled selected>Pilih Warna...</option>
+                    <option value="Black">Black</option>
+                    <option value="Pink">Pink</option>
+                    <option value="Grey">Grey</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Silver">Silver</option>
+                    <option value="Gold">Gold</option>
+                    <option value="White">White</option>
+                    <option value="Green">Green</option>
+                    <option value="Red">Red</option>
+                    <option value="Other">Other</option>
+                </select><br>
+
+                <label for="ram">RAM (GB):</label>
+                <select id="ram" name="ram" required>
+                    <option value="" disabled selected>Pilih Ukuran RAM...</option>
+                    <option value="64">64</option>
+                    <option value="40">40</option>
+                    <option value="32">32</option>
+                    <option value="24">24</option>
+                    <option value="16">16</option>
+                    <option value="8">8</option>
+                    <option value="4">4</option>
+                </select><br>
+
+                <label for="os">Sistem Operasi:</label>
+                <select id="os" name="os" required>
+                    <option value="" disabled selected>Pilih Sistem Operasi...</option>
+                    <option value="Windows 11 Home">Windows 11 Home</option>
+                    <option value="Windows 10 Home">Windows 10 Home</option>
+                    <option value="Windows 11 Pro">Windows 11 Pro</option>
+                    <option value="Windows 10 Pro">Windows 10 Pro</option>
+                </select><br>
+
+                <label for="brand">Brand:</label>
+                <select id="brand" name="brand" required>
+                    <option value="" disabled selected>Pilih Brand Laptop...</option>
+                    <option value="Razer">Razer</option>
+                    <option value="MSI">MSI</option>
+                    <option value="Microsoft">Microsoft</option>
+                    <option value="Lenovo">Lenovo</option>
+                    <option value="HP">HP</option>
+                    <option value="Dell">Dell</option>
+                    <option value="Axioo">Axioo</option>
+                    <option value="Asus">Asus</option>
+                    <option value="Acer">Acer</option>
+                </select><br>
+
+                <label for="touchscreen">Touchscreen:</label>
+                <select id="touchscreen" name="touchscreen" required>
+                    <option value="" disabled selected>Pilih...</option>
+                    <option value="1">Ya</option>
+                    <option value="0">Tidak</option>
+                </select><br>
+
+                <label for="ips">IPS:</label>
+                <select id="ips" name="ips" required>
+                    <option value="" disabled selected>Pilih...</option>
+                    <option value="1">Ya</option>
+                    <option value="0">Tidak</option>
+                </select><br>
+
+                <label for="vga_brand">VGA Brand:</label>
+                <select id="vga_brand" name="vga_brand" required>
+                    <option value="" disabled selected>Pilih Brand VGA...</option>
+                    <option value="NVIDIA">NVIDIA</option>
+                    <option value="AMD">AMD</option>
+                    <option value="Intel">Intel</option>
+                </select><br>
+
+                <label for="ssd">SSD (GB):</label>
+                <select id="ssd" name="ssd" required>
+                    <option value="" disabled selected>Pilih Kapasitas SSD...</option>
+                    <option value="4000">4000</option>
+                    <option value="2000">2000</option>
+                    <option value="1000">1000</option>
+                    <option value="512">512</option>
+                    <option value="256">256</option>
+                    <option value="0">0</option>
+                </select><br>
+
+                <label for="hdd">HDD (GB):</label>
+                <select id="hdd" name="hdd" required>
+                    <option value="" disabled selected>Pilih Kapasitas HDD...</option>
+                    <option value="1000">1000</option>
+                    <option value="0">0</option>
+                </select><br>
+
+                <label for="actual_price">Harga Asli (IDR):</label>
+                <input type="number" id="actual_price" name="actual_price" placeholder="Masukkan harga asli" required><br>
+
+                <button type="submit">Prediksi Harga</button>
+                <button type="reset" id="resetButton">Reset</button>
+            </form>
+        </section>
+
+        <section id="prediction-result">
+            <div class="result-card">
+                <h2>Hasil Prediksi</h2>
+                <p id="result-text"></p>
+                <p id="comparison-text"></p>
+                <p id="accuracy-text"></p>
+            </div>
+        </section> 
+        
+    </main>
+
+    <footer>
+        <div class="footer-content">
+          <p>&copy; 2025 Prediksi Harga Laptop oleh Agus Dewantoro.</p>
+          <p>
+            Email:
+            <a href="agusdewantoro@students.amikom.ac.id"
+              >agusdewantoro@students.amikom.ac.id</a
+            >
+          </p>
+        </div>
+        <div class="footer-links">
+          <ul>
+            <li><a>Home</a></li>
+            <li><a>Profil</a></li>
+            <li><a>FAQ</a></li>
+          </ul>
+        </div>
+      </footer> 
+
+    <script>
+        $(document).ready(function () {
+            $("#prediction-form").on("submit", function (e) {
+                e.preventDefault(); // Prevent form submission
+    
+                const formData = $(this).serialize(); // Serialize all form data
+    
+                $.ajax({
+                    url: "/predict",
+                    type: "POST",
+                    data: formData,
+                    success: function (response) {
+                        if (response.error) {
+                            $("#result-text").text(`Error: ${response.error}`);
+                            $("#comparison-text").text("");
+                            $("#accuracy-text").text("");
+                        } else {
+                            const predictedPrice = response.predicted_price.toLocaleString("id-ID", {
+                                style: "currency",
+                                currency: "IDR",
+                            });
+
+                            const actualPrice = parseInt($("#actual_price").val());
+                            const actualPriceFormatted = actualPrice.toLocaleString("id-ID", {
+                                style: "currency",
+                                currency: "IDR",
+                            });
+
+                            const accuracy = response.accuracy.toFixed(2) + "%";
+
+                            $("#result-text").text(`Harga Prediksi: ${predictedPrice}`);
+                            $("#comparison-text").text(`Harga Asli: ${actualPriceFormatted}`);
+                            $("#accuracy-text").text(`Akurasi Prediksi: ${accuracy}`);
+                        }
+                    },
+
+                    error: function () {
+                        $("#result-text").text("Terjadi kesalahan saat memproses permintaan.");
+                        $("#comparison-text").text("");
+                    },
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>
